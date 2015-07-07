@@ -17,9 +17,9 @@ class Config {
       $this->params = [ 'root' => __DIR__ .'/'.'..',
                         'controller_folder' => __DIR__ .'/'.'..'.'/controller',
                         'view_folder' => __DIR__ .'/'.'..'.'/view',
-                        'database_name' => 'test',
-                        'database_user' => 'miguel',
-                        'database_password' => 'degayon',
+                        'database_name' => 'DATABASE_NAME',
+                        'database_user' => 'DATABASE_USER',
+                        'database_password' => 'DATABASE_PASSWORD',
                 ];
    }
 
