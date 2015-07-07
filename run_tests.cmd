@@ -1,0 +1,1 @@
+php vendor\phpunit\phpunit\phpunit.php -c .\configuration.xml
