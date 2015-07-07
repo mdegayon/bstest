@@ -84,9 +84,14 @@ class Order extends Model{
                 ON
                     ORDERS.ADDRESS_ID = ADDRESSES.ID
                 WHERE
-                    STATUS = $status";
+                    STATUS = :status";
+        //$status
+        $sth = $conn->prepare($readyToSetupOrdersQuery);
+        $sth->execute(array(":status" => $status));
+        $result = $sth->fetchAll();
                 
-        foreach ($conn->query($readyToSetupOrdersQuery) as $row) {
+//        foreach ($conn->query($readyToSetupOrdersQuery) as $row) {
+        foreach ($result as $row) {
                         
             $currentOrder = new Order($row['id'], $row['client_id'], $row['address_id'], 
                     $row['date'], $row['status']);
